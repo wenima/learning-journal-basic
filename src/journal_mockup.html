@@ -1,0 +1,95 @@
+<!-- simple learning journal using HTML & CSS -->
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>My learning journal</title>
+        <meta name="description" content="This is a mockup of a learning journal page">
+        <meta name="author" content="MSKW">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+        <div id="main-container">
+            <div id="middle-container"> <!-- Middle Part -->
+                <div id="relatedPosts" class="container"> <!-- Related Posts -->
+                    <div class="bar title-bar">
+                        <h2>Posts</h2>
+                    </div>
+
+                    <div class="rpost">
+                        <p><a href="#1">first entry into the lourning journal</a> <br/>
+                    </div>
+                </div>
+            </div>
+
+            <div id="right-container"> <!-- Right Part -->
+                <div id="calendar" class="container"> <!-- Calendar -->
+                    <div class="bar title-bar calendar-bar">
+                        <ul>
+                            <li><a href="#linktopost" class="arrow"><h2>&lt;</h2></a></li>
+                            <li><a href="#linktopost" class="month"><h2>December</h2></a></li>
+                            <li><a href="#linktopost" class="arrow"><h2>&gt;</h2></a></li>
+                        </ul>
+                    </div>
+                    <div class="calendar-container">
+                        <div class="daysWeek">
+                            <ul>
+                                <li>Sun</li>
+                                <li>Mon</li>
+                                <li>Tue</li>
+                                <li>Wed</li>
+                                <li>Thu</li>
+                                <li>Fri</li>
+                                <li>Sat</li>
+                            </ul>
+                        </div>
+                        <table class="calendar">
+                            <tbody class="days">
+                                <tr>
+                                    <td class="daysOut"><a href="#1">1</a></td>
+                                    <td class="daysOut"><a href="#2">2</a></td>
+                                    <td><a href="#1">1</a></td>
+                                    <td><a href="#2">2</a></td>
+                                    <td class="today"><a href="#57">5</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="recentPosts" class="title-bar more-bar"> <!-- Recent Posts -->
+                    <ul>
+                        <li><h2>Recent Posts</h2></li>
+                        <li><a href="#1" class="scroll"><span class="entypo-right-dir"></span></a></li>
+                    </ul>
+                </div>
+                <div id="moreOptions" class="container"> <!-- More Options -->
+                    <div class="title-bar more-bar moreOptions-bar">
+                        <ul>
+                            <li><a href="#5" class="comments-recent">Recent</a></li>
+                        </ul>
+                    </div>
+                    <div class="popular">
+                        <img src="placeholder" alt="img" class="profile-img">
+                        <p><a href="#linktopost">placeholder txt</a> <br/>
+                        <a href="#linktopost">placeholder/a></p>
+                    </div>
+                    <div class="popular">
+                        <img src="placeholderlink" alt="img" class="profile-img">
+                        <p><a href="#linktopost">placeholder</a> <br/>
+                        <a href="#linktopost">placeholder</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
