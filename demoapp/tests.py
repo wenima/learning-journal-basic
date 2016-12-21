@@ -1,29 +1,30 @@
-import unittest
-
+import pytest
 from pyramid import testing
 
+@pytest.fixture
+def req():
+    the_request = testing.DummyRequest()
+    return the_request
 
-class ViewTests(unittest.TestCase):
-    def setUp(self):
-        self.config = testing.setUp()
+def test_home_page_renders_file_data(req):
+    """My home page view returns some data."""
+    from .views import home_page
+    response = home_page(req)
+    assert response.startswith("<h1")
 
-    def tearDown(self):
-        testing.tearDown()
-
-    def test_my_view(self):
-        from .views import my_view
-        request = testing.DummyRequest()
-        info = my_view(request)
-        self.assertEqual(info['project'], 'demoapp')
+def test_home_page_has_iterable(req):
+    from .views import home_page
+    reponse = home_page(req)
+    assert hasattr(response["bag_list"], "__iter__")
 
 
-class FunctionalTests(unittest.TestCase):
-    def setUp(self):
-        from demoapp import main
-        app = main({})
-        from webtest import TestApp
-        self.testapp = TestApp(app)
+@pytest.fixture
+def testapp():
+    from webtest import TestApp
+    from learning_journal_basic import main
+    app = main({})
+    return TestApp(app)
 
-    def test_root(self):
-        res = self.testapp.get('/', status=200)
-        self.assertTrue(b'Pyramid' in res.body)
+def test_home_page_has_list(testapp):
+    response = testapp.get("/", status = 200)
+    inner_html = response.html

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Flerg{%
+    endblock %}</title>
+</head>
+<body>
+    {% block body %}{% endblock %}
+    {% if sidebar %}
+    <aisde>{% block sidebar %}
+        {%endlbock %}</aside>
+        {% endif %}
+</body>
+</html>
