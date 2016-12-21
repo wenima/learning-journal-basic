@@ -6,3 +6,11 @@
 * Research has shown that self-reflection is powerful in adult learning
 * Writing things down clears the mind
 * Writing things down can lead to new ideas&discoveries otherwise missed in the shuffle
+
+# Get Started:
+
+* cd <directory containing this file>
+
+* $VENV/bin/pip install -e .
+
+* $VENV/bin/pserve development.ini
