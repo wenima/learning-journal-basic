@@ -1,0 +1,13 @@
+{% extends "layout.jinja2" %}
+{% block title %}Learning Journal Home Page{%
+endblock}
+
+{% block body %}
+<h1>Learning Journal Homepage. A view of all the entries made so far.</h1>
+<ul>
+    {% for item in bag_list %}
+        <li>{{ item.title }} </li>
+            <!-- {{ item.body }}</li> -->
+    {% endfor %}
+</ul>
+{% endblock %}
