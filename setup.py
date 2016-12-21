@@ -10,19 +10,21 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
 
 requires = [
     'pyramid',
-    'pyramid_chameleon',
+    #'pyramid_chameleon',
     'pyramid_debugtoolbar',
     'waitress',
+    'pyramid_jinja2',
     ]
 
 tests_require = [
     'WebTest >= 1.3.1',  # py3 compat
     'pytest',  # includes virtualenv
     'pytest-cov',
+    'tox',
     ]
 
-setup(name='demoapp',
-      version='0.0',
+setup(name='learning_journal_basic',
+      version='0.9',
       description='demoapp',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
@@ -31,19 +33,20 @@ setup(name='demoapp',
           "Topic :: Internet :: WWW/HTTP",
           "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
       ],
-      author='',
-      author_email='',
-      url='',
+      author='Marc Kessler-Wenicker',
+      author_email='marc.kesslerwenicker@gmial.com',
+      url='https://github.com/wenima',
       keywords='web pyramid pylons',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
       extras_require={
-          'testing': tests_require,
-      },
+        'testing': tests_require,
+        'install': requires,
+        },
       install_requires=requires,
       entry_points="""\
       [paste.app_factory]
-      main = demoapp:main
-      """,
+       main = learning_journal_basic:main
+       """,
       )
